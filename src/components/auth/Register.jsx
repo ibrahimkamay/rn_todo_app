@@ -1,7 +1,8 @@
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, FlatList } from "react-native";
 import React from "react";
 import Input from "../../shared/Input";
 import Button from "../../shared/Button";
+import { registerForm } from "../../utils/const/authForm";
 
 export default function Register() {
   return (
@@ -14,18 +15,18 @@ export default function Register() {
           <Text className="text-center">Task oluşturmana yardımcı olmamız için ilk adımı tamamlayın.</Text>
       </View>
       <View className="w-full">
-        <View className="w-full mt-5">
-            <Input title={"Tam adınızı giriniz"} />
-          </View>
-          <View className="w-full mt-5">
-            <Input title={"E-mail adresi giriniz"} />
-          </View>
-          <View className="w-full mt-5">
-            <Input title={"Şifrenizi giriniz"} />
-          </View>
-          <View className="w-full mt-5">
-            <Input title={"Tekrar şifrenizi giriniz"} />
-          </View>
+
+      <FlatList
+        data={registerForm}
+        renderItem={({item}) =>
+      <View className="w-full mt-5">
+        <Input title={item.title} isVisible={item.isVisible}   />
+      </View>
+       }
+        keyExtractor={item => item.id}
+      />
+
+          
       </View>
         <View className="w-full mt-14">
           <Button title={"Kayıt Ol"} />
