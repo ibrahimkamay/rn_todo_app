@@ -1,40 +1,36 @@
-import Feather from '@expo/vector-icons/Feather';
-
 export const loginForm = [
-    { 
-        id: '1', 
-        title: 'E-mail adresiniz',
-     },
-    { 
-        id: '2', 
-        title: 'Şifreniz',
-        isVisible: true,
-        isVisibleIcon: <Feather name="eye" size={20} />,
-     },
-  ];
+  {
+    id: "1",
+    title: "E-mail adresiniz",
+    typeOf: "email",
+  },
+  {
+    id: "2",
+    title: "Şifreniz",
+    typeOf: "password",
+  },
+];
 
 export const registerForm = [
-    {
-        title:"Tam adınızı giriniz",
-        id: 1,
-        isVisibleIcon: <Feather name="eye" size={20} />,
-    },
-    {
-        title:"E-mail adresi giriniz",
-        id: 2,
-        isVisibleIcon: <Feather name="eye" size={20} />,
-    },
-    {
-        title:"Şifrenizi giriniz",
-        id: 3,
-        isVisible: true,
-        isVisibleIcon: <Feather name="eye" size={20} />,
-    },
-    {
-        title:"Tekrar şifrenizi giriniz",
-        id: 4,
-        isVisible: true,
-        isVisibleIcon: <Feather name="eye" size={20} />,
-    }
-    
-]   
+  {
+    title: "Tam adınızı giriniz",
+    typeOf: "name",
+    id: 1,
+  },
+  {
+    title: "E-mail adresi giriniz",
+    typeOf: "email",
+
+    id: 2,
+  },
+  {
+    title: "Şifrenizi giriniz",
+    typeOf: "password",
+    id: 3,
+  },
+  {
+    title: "Tekrar şifrenizi giriniz",
+    typeOf: "rePassword",
+    id: 4,
+  },
+];
