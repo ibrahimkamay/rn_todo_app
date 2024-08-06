@@ -1,14 +1,22 @@
-import { Text, TextInput, TouchableHighlightBase, View } from "react-native";
-import { useState } from "react";
+import { TextInput, View } from "react-native";
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setUserValidationInput,
+  signInWithEmailAndPassword,
+} from "../redux/userSlice";
 
-export default function Input({
-  item: { title, typeOf },
-  setFormInfo,
-  formInfo,
-}) {
+export default function Input({ item: { title, typeOf } }) {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user); // buradaki state store'daki tüm state'i temsil eder. user.value ise user reducer'ındaki value'yi temsil eder.
   const changeFormInfo = (value, typeOf) => {
-    setFormInfo((prevList) => ({ ...prevList, [typeOf]: value }));
+    // setFormInfo((prevList) => ({ ...prevList, [typeOf]: value }));
+    dispatch(
+      setUserValidationInput({
+        typeOf,
+        value,
+      })
+    );
   };
 
   return (
@@ -19,7 +27,7 @@ export default function Input({
         onChangeText={(value) => {
           changeFormInfo(value, typeOf);
         }}
-        value={formInfo.typeOf}
+        value={user[typeOf]}
       />
     </View>
   );
