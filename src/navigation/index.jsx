@@ -5,7 +5,7 @@ import Loader from "../shared/Loader";
 import { useSelector } from "react-redux";
 
 export default function StackNavigator() {
-  const isLogin = false;
+  const isLogin = true;
   const { loader } = useSelector((state) => state.general);
   return (
     <>
