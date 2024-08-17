@@ -18,7 +18,9 @@ const Tab = createBottomTabNavigator();
 export default function UserStack() {
   return (
     <NavigationContainer>
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Navigator
+        screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+      >
         <Tab.Screen
           options={{
             tabBarLabel: ({ focused }) =>
@@ -66,7 +68,7 @@ export default function UserStack() {
               <Text className="text-[11px] text-cyan-600">Add Task</Text>
             ),
             tabBarIcon: () => (
-              <AntDesign name="pluscircle" size={24} color="#0891b2" />
+              <AntDesign name="pluscircle" size={30} color="#0891b2" />
             ),
           }}
           name="addTask"
