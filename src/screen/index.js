@@ -5,6 +5,7 @@ import TaskScreen from "./TaskScreen";
 import Profile from "./Profile";
 import CompletedScreen from "./CompletedScreen";
 import AddTaskScreen from "./AddTaskScreen";
+import PremiumScreen from "./PremiumScreen";
 
 export {
   HomeScreen,
@@ -14,4 +15,5 @@ export {
   Profile,
   CompletedScreen,
   AddTaskScreen,
+  PremiumScreen,
 };

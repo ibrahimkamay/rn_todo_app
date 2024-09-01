@@ -10,6 +10,7 @@ import {
   Profile,
   AddTaskScreen,
   CompletedScreen,
+  PremiumScreen,
 } from "../screen";
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -42,7 +43,7 @@ export default function UserStack() {
             tabBarBadge: 3,
           }}
           name="Home"
-          component={HomeScreen}
+          component={PremiumScreen}
         />
         <Tab.Screen
           options={{
